@@ -214,7 +214,10 @@ AddDefaultCharset utf-8
     Options +FollowSymlinks
   # Options +SymLinksIfOwnerMatch
     RewriteEngine On
-  # RewriteBase /
+RewriteBase /
+RewriteCond %{HTTP_HOST} !ropabebe.ceophp.net$ [NC]
+RewriteRule ^(.*)$ http://www.ropabebe.ceophp.net/$1 [L,R=301] 
+
 </IfModule>
 
 # ------------------------------------------------------------------------------
